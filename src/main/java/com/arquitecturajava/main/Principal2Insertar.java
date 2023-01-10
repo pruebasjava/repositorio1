@@ -34,6 +34,7 @@ public class Principal2Insertar {
 		em.persist(l1);
 		em.getTransaction().commit();
 		
+		System.out.println("Se ha insertado otro registro");
 
 	}
 

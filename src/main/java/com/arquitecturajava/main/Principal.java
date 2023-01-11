@@ -10,7 +10,7 @@ public class Principal {
 
 	public static void main(String[] args) {
 		
-		// Unidad de persistencia (COMENTARIO EN GITHUB)
+		// Unidad de persistencia (COMENTARIO EN GITHUB 2)
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("biblioteca");
 		
 		

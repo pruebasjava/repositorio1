@@ -3,6 +3,8 @@ package com.arquitecturajava.dominio;
 import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity 
@@ -15,6 +17,10 @@ public class Libro {
 	private String autor;
 	private Date fecha;
 	private int precio;
+	
+	@OneToOne
+	@JoinColumn(name="idioma")
+	private Idioma idioma;
 
 	public Libro(String isbn) {
 		super();
@@ -31,6 +37,15 @@ public class Libro {
 		this.fecha = fecha;
 		this.precio = precio;
 	}
+	public Libro(String isbn, String titulo, String autor, Date fecha, int precio, Idioma idioma) {
+		super();
+		this.isbn = isbn;
+		this.titulo = titulo;
+		this.autor = autor;
+		this.fecha = fecha;
+		this.precio = precio;
+		this.idioma = idioma;
+	}	
 	public String getIsbn() {
 		return isbn;
 	}
@@ -61,6 +76,12 @@ public class Libro {
 	public void setPrecio(int precio) {
 		this.precio = precio;
 	}
+	public Idioma getIdioma() {
+		return idioma;
+	}
+	public void setIdioma(Idioma idioma, Object newParam) {
+		this.idioma = idioma;
+	}	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -87,8 +108,10 @@ public class Libro {
 	@Override
 	public String toString() {
 		return "Libro [isbn=" + isbn + ", titulo=" + titulo + ", autor=" + autor + ", fecha=" + fecha + ", precio="
-				+ precio + "]";
+				+ precio + ", idioma=" + idioma + "]";
 	}
+
+
 	
 	
 }

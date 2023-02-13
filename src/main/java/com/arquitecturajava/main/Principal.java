@@ -19,6 +19,8 @@ public class Principal {
 		System.out.println(libro.getIsbn());
 		System.out.println(libro.getAutor());
 		System.out.println(libro.getTitulo());
+		System.out.println(libro.getPrecio());
+		System.out.println(libro.getIdioma().getIdioma());
 		
 		
 		//comentario

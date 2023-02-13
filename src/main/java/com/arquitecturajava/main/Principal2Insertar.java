@@ -8,6 +8,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import com.arquitecturajava.dominio.Idioma;
 import com.arquitecturajava.dominio.Libro;
 
 
@@ -28,7 +29,8 @@ public class Principal2Insertar {
 			e.printStackTrace();
 		}
 		
-		Libro l1 = new Libro ("2A","JPA","Ana",fecha,3);
+		Idioma idioma = em.find(Idioma.class, 2);
+		Libro l1 = new Libro ("5A","English bed book","Juana",fecha,3, idioma);
 		
 		em.getTransaction().begin();
 		em.persist(l1);
